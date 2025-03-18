@@ -1,0 +1,74 @@
+<div class="relative min-h-screen w-full bg-gray">
+  <div class="bg-[url('{{.bg_image}}')] min-h-screen bg-cover bg-center bg-no-repeat bg-slate-500 bg-blend-multiply">
+    <div class="px-12 container min-h-screen mx-auto grid place-items-center text-center">
+      <div class="grid place-items-center">
+        <div class="lg:-translate-y-28 -translate-y-14">
+            {{ with .context.headline_secondary }}
+                {{ if .enable }}
+                    <p class="block antialiased font-sans text-white text-base font-bold !leading-snug">
+                        {{ with .headline_secondary_text}}
+                            {{ . }}
+                        {{ else }}
+                            {{ site.Params.brokeros_default_hero_component_headline_secondary_text }}
+                        {{ end }}
+                    </p>
+                {{ end }}
+            {{ end }}
+            {{ with .context.headline_primary }}
+                {{ if .enable }}
+                    <h1 class="block antialiased tracking-normal font-sans font-semibold text-white !text-2xl my-4 !leading-snug lg:!text-5xl relative">
+                        {{ with .headline_primary_text }}
+                            {{ . }}
+                        {{ else }}
+                            {{ site.Params.brokeros_default_hero_component_headline_primary_text }}
+                        {{ end }}
+                    </h1>
+                {{ end }}
+            {{ end }}
+            {{ with .context.headline_primary }}
+                {{ if .enable }}
+                    <p class="block antialiased font-sans text-base font-light leading-relaxed text-white relative lg:mb-10 mb-20 lg:text-lg">
+                        {{ with .headline_tertiary_text }}
+                            {{ . }}
+                        {{ else }}
+                            {{ site.Params.brokeros_default_hero_component_headline_tertiary_text }}
+                        {{ end }}
+                    </p>
+                {{ end }}
+            {{ end }}
+        </div>
+        {{ with .context.cta_button }}
+            {{ if .enable }}
+                <div class="lg:translate-y-44 md:translate-y-24 translate-y-2">
+                    <p class="block antialiased font-sans font-light leading-relaxed text-white text-lg mb-4">
+                        <span class="font-normal">
+                            {{ with .cta_button_pretext }}
+                                {{ . }} Free Tickets</span>
+                            {{ else }}
+                                {{ site.Params.brokeros_default_hero_component_cta_button_pretext }}
+                            {{ end }}
+                        </span>
+                    </p>
+                    {{ with .cta_button_link}}
+                        <a href="{{ .cta_button_link }}">
+                    {{ else }}
+                        <a href="{{ site.Params.brokeros_default_hero_component_cta_button_link }}">
+                    {{ end }}
+                        <button
+                            class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] block w-full"
+                            type="button"
+                            data-ripple-light="true">
+                            {{ with .cta_button_text }}
+                                {{ . }}
+                            {{ else }}
+                                {{ site.Params.brokeros_default_hero_component_cta_button_text }}
+                            {{ end }}
+                        </button>
+                    </a>
+                </div>
+            {{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
