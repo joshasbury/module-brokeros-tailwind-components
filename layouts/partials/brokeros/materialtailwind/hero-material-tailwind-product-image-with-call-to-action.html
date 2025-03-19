@@ -9,7 +9,7 @@
                         {{ with .headline_secondary_text}}
                             {{ . }}
                         {{ else }}
-                            {{ site.Params.brokeros_default_hero_component_headline_secondary_text }}
+                            {{ site.Params.brokeros_default_home_hero_component_headline_secondary_text }}
                         {{ end }}
                     </p>
                 {{ end }}
@@ -20,7 +20,7 @@
                         {{ with .headline_primary_text }}
                             {{ . }}
                         {{ else }}
-                            {{ site.Params.brokeros_default_hero_component_headline_primary_text }}
+                            {{ site.Params.brokeros_default_home_hero_component_headline_primary_text }}
                         {{ end }}
                     </h1>
                 {{ end }}
@@ -31,7 +31,7 @@
                         {{ with .headline_tertiary_text }}
                             {{ . }}
                         {{ else }}
-                            {{ site.Params.brokeros_default_hero_component_headline_tertiary_text }}
+                            {{ site.Params.brokeros_default_home_hero_component_headline_tertiary_text }}
                         {{ end }}
                     </p>
                 {{ end }}
@@ -45,14 +45,14 @@
                             {{ with .cta_button_pretext }}
                                 {{ . }} Free Tickets</span>
                             {{ else }}
-                                {{ site.Params.brokeros_default_hero_component_cta_button_pretext }}
+                                {{ site.Params.brokeros_default_home_hero_component_cta_button_pretext }}
                             {{ end }}
                         </span>
                     </p>
                     {{ with .cta_button_link}}
                         <a href="{{ .cta_button_link }}">
                     {{ else }}
-                        <a href="{{ site.Params.brokeros_default_hero_component_cta_button_link }}">
+                        <a href="{{ site.Params.brokeros_default_home_hero_component_cta_button_link }}">
                     {{ end }}
                         <button
                             class="align-middle select-none font-sans font-bold text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-xs py-3 px-6 rounded-lg border border-white text-white hover:opacity-75 focus:ring focus:ring-white/50 active:opacity-[0.85] block w-full"
@@ -61,7 +61,7 @@
                             {{ with .cta_button_text }}
                                 {{ . }}
                             {{ else }}
-                                {{ site.Params.brokeros_default_hero_component_cta_button_text }}
+                                {{ site.Params.brokeros_default_home_hero_component_cta_button_text }}
                             {{ end }}
                         </button>
                     </a>
