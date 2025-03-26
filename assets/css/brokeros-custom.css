@@ -1,0 +1,7 @@
+.bos-section-header {
+    @apply mx-auto max-w-7xl px-6 pb-24 pt-6 sm:pt-6 lg:px-8 lg:pt-24;
+  }
+
+  .hero-tailwindui-with-image-tiles {
+    @apply aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg;
+  }
