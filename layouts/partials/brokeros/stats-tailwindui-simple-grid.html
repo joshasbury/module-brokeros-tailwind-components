@@ -1,0 +1,68 @@
+<div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-none">
+        <div class="text-center">
+          {{ with .headline_primary }}
+            {{ if .enable }}
+              <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+                {{ with .headline_primary_text }}
+                  {{ .}}
+                {{ else }}
+                  {{ site.Params.brokeros_stats_component_simple_grid_headline_primary_text_default }}
+                {{ end }}
+              </h2>
+            {{ end }}
+          {{ end }}
+          {{ with .headline_secondary }}
+            {{ if .enable }}
+              <p class="mt-4 text-lg/8 text-gray-600">
+                {{ with .headline_secondary_text }}
+                  {{ . }}
+                {{ else }}
+                  {{ site.Params.brokeros_stats_component_simple_grid_headline_secondary_text_default }}
+                {{ end }}
+              </p>
+            {{ end }}
+          {{ end }}
+        </div>
+        <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+          {{ $counter := 1 }}        
+          {{ range .stats }}
+            <div class="flex flex-col bg-gray-400/5 p-8">
+              <dt class="text-sm/6 font-semibold text-gray-600">
+                {{ with .detail }} 
+                  {{ . }}
+                {{ else }}
+                  {{ if eq $counter 1 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_1_detail_default }}
+                  {{ else if eq $counter 2 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_2_detail_default }}
+                  {{ else if eq $counter 3 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_3_detail_default }}
+                  {{ else if eq $counter 4 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_4_detail_default }}
+                  {{ end }}
+                {{ end }}
+              </dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+                {{ with .text }} 
+                 {{ . }}
+                {{ else }} 
+                  {{ if eq $counter 1 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_1_text_default }}
+                  {{ else if eq $counter 2 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_2_text_default }}
+                  {{ else if eq $counter 3 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_3_text_default }}
+                  {{ else if eq $counter 4 }}
+                    {{ site.Params.brokeros_stats_component_simple_grid_stat_4_text_default }}
+                  {{ end }}
+                {{ end }}
+              </dd>
+            </div>
+            {{ $counter = add $counter 1 }}
+          {{ end }}
+        </dl>
+      </div>
+    </div>
+  </div>  
