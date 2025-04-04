@@ -1,0 +1,26 @@
+<!-- theme switcher -->
+{{ if site.Params.theme_demo_mode }}
+  <div>
+    <label for="theme-switcher">
+      <span class="sr-only">theme switcher</span>
+        <select id="tailwindUIThemeSwircher" onchange="setTheme(this.value)">
+          <option>Select</option>
+          <option value="candy">Candy</option>
+          <option value="emerald">Emerald</option>
+          <option value="rainforest">Rainforest</option>
+          
+        </select>
+    </label>
+  </div>
+
+  <!-- theme switcher -->
+
+  <script>
+    let selectedValue;
+
+    function setTheme(value) {
+      const html = document.querySelector('html')
+      html.setAttribute("data-theme", value);
+    }
+  </script>  
+{{ end }}
