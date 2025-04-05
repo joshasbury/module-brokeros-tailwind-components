@@ -1,10 +1,10 @@
-<div class="bg-white py-24 sm:py-32">
+<div class="bos-section bg-(--bos-color-surface)">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:max-w-none">
-        <div class="text-center">
+        <div class="text-left">
           {{ with .headline_primary }}
             {{ if .enable }}
-              <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+              <h2 class="text-balance text-4xl font-semibold tracking-tight text-(--bos-color-primary) sm:text-5xl">
                 {{ with .headline_primary_text }}
                   {{ .}}
                 {{ else }}
@@ -15,7 +15,7 @@
           {{ end }}
           {{ with .headline_secondary }}
             {{ if .enable }}
-              <p class="mt-4 text-lg/8 text-gray-600">
+              <p class="mt-4 text-lg/8 text-(--bos-color-on-surface)">
                 {{ with .headline_secondary_text }}
                   {{ . }}
                 {{ else }}
@@ -28,8 +28,8 @@
         <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
           {{ $counter := 1 }}        
           {{ range .stats }}
-            <div class="flex flex-col bg-gray-400/5 p-8">
-              <dt class="text-sm/6 font-semibold text-gray-600">
+            <div class="flex flex-col bg-(--bos-color-primary-container) p-8">
+              <dt class="text-sm/6 font-semibold text-(--bos-color-on-primary-container)">
                 {{ with .detail }} 
                   {{ . }}
                 {{ else }}
@@ -44,7 +44,7 @@
                   {{ end }}
                 {{ end }}
               </dt>
-              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900">
+              <dd class="order-first text-3xl font-semibold tracking-tight text-(--bos-color-on-primary-container)">
                 {{ with .text }} 
                  {{ . }}
                 {{ else }} 

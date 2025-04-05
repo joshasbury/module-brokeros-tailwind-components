@@ -1,7 +1,7 @@
-<div class="bos-section bg-white">
+<div class="bos-section bg-(--bos-color-surface)">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-(--bos-color-on-surface-primary-color) sm:text-5xl">
         {{ with .headline_primary }}
           {{ if .enable }}
             {{ with .headline_primary_text }}
@@ -12,7 +12,7 @@
           {{ end }}
         {{ end }}
       </h2>
-      <p class="mt-6 text-lg/8 text-gray-600">
+      <p class="mt-6 text-lg/8 text-(--bos-color-on-surface)">
         {{ with .headline_secondary }}
           {{ if .enable }}
             {{ with .headline_secondary_text }}
@@ -24,22 +24,22 @@
         {{ end }}
       </p>
     </div>
-    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+    <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-18 lg:max-w-none">
       <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
         {{ with .products }}
           {{ if .enable }}
             {{ range .product_details }}
-              <div class="flex flex-col">
+              <div class="px-6 py-6 flex flex-col rounded-xl bg-(--bos-color-container)">
                 <dt class="text-base/7 font-semibold text-gray-900">
-                  <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-indigo-600">
+                  <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-(--bos-color-on-surface-primary-color)">
                     <i class="{{ .icon }}"></i>
                   </div>
                   {{ .title }}
                 </dt>
-                <dd class="mt-1 flex flex-auto flex-col text-base/7 text-gray-600">
+                <dd class="mt-1 flex flex-auto flex-col text-base/7 text-(--bos-color-on-container)">
                   <p class="flex-auto">{{ .description }}</p>
                   <p class="mt-6">
-                    <a href="{{ .cta_link }}" class="text-sm/6 font-semibold text-indigo-600">{{ .cta_text }} <span aria-hidden="true">→</span></a>
+                    <a href="{{ .cta_link }}" class="text-sm/6 font-semibold text-(--bos-color-on-surface-primary-color) hover:text-(--bos-color-on-primary-container-variant)">{{ .cta_text }} <span aria-hidden="true">→</span></a>
                   </p>
                 </dd>
               </div>

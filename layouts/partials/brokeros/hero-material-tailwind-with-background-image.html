@@ -4,8 +4,9 @@
   {{ $bg_image = . }}
 {{ end }}
 
-<div class="relative min-h-screen w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">
-  <div class="absolute inset-0 h-full w-full bg-black/50"></div>
+<!-- <div class="bg-(--bos-color-primary) bg-blend-soft-light pb-16 relative min-h-screen w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">-->
+<div class="bg-(--bos-color-primary) bg-blend-soft-light relative min-h-screen w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 h-full w-full after:bg-(--bos-color-primary)"></div>
     <div class="grid min-h-screen px-8">
       <div class="container relative z-10 my-auto mx-auto grid place-items-center text-center">
           <h3 class="block antialiased tracking-normal font-sans font-semibold text-white text-lg !leading-snug lg:text-2xl">
@@ -33,3 +34,4 @@
     </div>
   </div>
 </div>
+<div class="pb-12"></div>
