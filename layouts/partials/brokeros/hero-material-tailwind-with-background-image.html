@@ -30,8 +30,27 @@
               {{ site.Params.brokeros_hero_component_headline_tertiary_text_default }}
             {{ end }}
           </p>
+          <div class="mt-10 flex items-center gap-x-6">
+            <a href="#hero-bottom" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-(--bos-color-primary) hover:bg-(--bos-color-on-primary-container-variant) shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+              {{ with .cta_button_1_text }}
+                {{ . }}
+              {{ else }}
+                {{ site.Params.brokeros_hero_component_cta_button_1_text_default }}
+              {{ end }}
+            </a>
+            <a href="#" class="text-sm/6 font-semibold text-white hover:text-(--bos-color-on-primary-container-variant)">
+              {{ with .cta_button_2_text }}
+                {{ . }}
+              {{ else }}
+                {{ site.Params.brokeros_hero_component_cta_button_2_text_default }}
+              {{ end }}
+              <span aria-hidden="true">→</span></a>
+          </div>
       </div>
+      
     </div>
   </div>
 </div>
-<div class="pb-12"></div>
+<section id="hero-bottom" class="pb-12">
+
+</section>
