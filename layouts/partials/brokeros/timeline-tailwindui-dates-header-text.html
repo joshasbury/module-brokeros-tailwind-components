@@ -1,65 +1,63 @@
 <div class="bg-(--bos-color-surface) dark:bg-(--bos-color-on-surface-dark)">
     <main class="relative isolate">
-      <!-- Timeline section -->
-          <div class="mx-auto -mt-8 max-w-7xl px-6 lg:px-8 py-10">
-            <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
-              {{ $counter := 1 }} 
-              {{ range .timeline_event}} 
-                <div>
-                  <time datetime="2021-08" class="flex items-center text-sm font-semibold leading-6 text-(--bos-color-primary)">
-                    <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
-                      <circle cx="2" cy="2" r="2" fill="currentColor" />
-                    </svg>
-                    {{ with .date }}
-                      {{ . }}
-                    {{ else }}
-                      {{ if eq $counter 1 }}
-                        {{ site.Params.brokeros_timeline_event_1_date_default}}
-                      {{ else if eq $counter 2}}
-                        {{ site.Params.brokeros_timeline_event_2_date_default}}
-                      {{ else if eq $counter 3}}
-                        {{ site.Params.brokeros_timeline_event_3_date_default}}
-                      {{ else if eq $counter 4}}
-                        {{ site.Params.brokeros_timeline_event_4_date_default}}
-                      {{ end }}
-                    {{ end }}
-                    <div class="absolute -ml-2 h-px w-screen -translate-x-full bg-(--bos-color-on-container)/10 sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
-                  </time>
-                  <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-(--bos-color-on-container)">
-                    {{ with .headline_text}}
-                      {{ . }}
-                    {{ else }}
-                      {{ if eq $counter 1 }}
-                        {{ site.Params.brokeros_timeline_event_1_headline_text_default }}
-                      {{ else if eq $counter 2 }}
-                        {{ site.Params.brokeros_timeline_event_2_headline_text_default }}
-                      {{ else if eq $counter 3 }}
-                        {{ site.Params.brokeros_timeline_event_3_headline_text_default }}
-                      {{ else if eq $counter 4 }}
-                        {{ site.Params.brokeros_timeline_event_4_headline_text_default }}
-                      {{ end }}
-                    {{ end }}
-                    
-                  </p>
-                  <p class="mt-1 text-base leading-7 text-(--bos-color-on-container)">
-                    {{ with .headline_subtext}}
-                      {{ . }}
-                    {{ else }}
-                      {{ if eq $counter 1 }}
-                        {{ site.Params.brokeros_timeline_event_1_headline_subtext_default }}
-                      {{ else if eq $counter 2 }}
-                        {{ site.Params.brokeros_timeline_event_2_headline_subtext_default }}
-                      {{ else if eq $counter 3 }}
-                        {{ site.Params.brokeros_timeline_event_3_headline_subtext_default }}
-                      {{ else if eq $counter 4 }}
-                        {{ site.Params.brokeros_timeline_event_4_headline_subtext_default }}
-                      {{ end }}
-                    {{ end }}
-                  </p>
-                </div>
-                {{ $counter = add $counter 1 }}
-              {{end}}
+      <div class="mx-auto -mt-8 max-w-7xl px-6 lg:px-8 py-10">
+        <div class="mx-auto grid max-w-2xl grid-cols-1 gap-8 overflow-hidden lg:mx-0 lg:max-w-none lg:grid-cols-4">
+          {{ $counter := 1 }} 
+          {{ range .timeline_event}} 
+            <div>
+              <time datetime="2021-08" class="flex items-center text-sm font-semibold leading-6 text-(--bos-color-primary)">
+                <svg viewBox="0 0 4 4" class="mr-4 h-1 w-1 flex-none" aria-hidden="true">
+                  <circle cx="2" cy="2" r="2" fill="currentColor" />
+                </svg>
+                {{ with .date }}
+                  {{ . }}
+                {{ else }}
+                  {{ if eq $counter 1 }}
+                    {{ site.Params.brokeros_timeline_event_1_date_default}}
+                  {{ else if eq $counter 2}}
+                    {{ site.Params.brokeros_timeline_event_2_date_default}}
+                  {{ else if eq $counter 3}}
+                    {{ site.Params.brokeros_timeline_event_3_date_default}}
+                  {{ else if eq $counter 4}}
+                    {{ site.Params.brokeros_timeline_event_4_date_default}}
+                  {{ end }}
+                {{ end }}
+                <div class="absolute -ml-2 h-px w-screen -translate-x-full bg-(--bos-text-on-container) sm:-ml-4 lg:static lg:-mr-6 lg:ml-8 lg:w-auto lg:flex-auto lg:translate-x-0" aria-hidden="true"></div>
+              </time>
+              <p class="mt-6 text-lg font-semibold leading-8 tracking-tight text-(--bos-text-on-container)">
+                {{ with .headline_text}}
+                  {{ . }}
+                {{ else }}
+                  {{ if eq $counter 1 }}
+                    {{ site.Params.brokeros_timeline_event_1_headline_text_default }}
+                  {{ else if eq $counter 2 }}
+                    {{ site.Params.brokeros_timeline_event_2_headline_text_default }}
+                  {{ else if eq $counter 3 }}
+                    {{ site.Params.brokeros_timeline_event_3_headline_text_default }}
+                  {{ else if eq $counter 4 }}
+                    {{ site.Params.brokeros_timeline_event_4_headline_text_default }}
+                  {{ end }}
+                {{ end }}
+              </p>
+              <p class="mt-1 text-base leading-7 text-(--bos-text-on-container-lighter)">
+                {{ with .headline_subtext}}
+                  {{ . }}
+                {{ else }}
+                  {{ if eq $counter 1 }}
+                    {{ site.Params.brokeros_timeline_event_1_headline_subtext_default }}
+                  {{ else if eq $counter 2 }}
+                    {{ site.Params.brokeros_timeline_event_2_headline_subtext_default }}
+                  {{ else if eq $counter 3 }}
+                    {{ site.Params.brokeros_timeline_event_3_headline_subtext_default }}
+                  {{ else if eq $counter 4 }}
+                    {{ site.Params.brokeros_timeline_event_4_headline_subtext_default }}
+                  {{ end }}
+                {{ end }}
+              </p>
             </div>
-          </div>
+            {{ $counter = add $counter 1 }}
+          {{end}}
+        </div>
+      </div>
     </main>
   </div>

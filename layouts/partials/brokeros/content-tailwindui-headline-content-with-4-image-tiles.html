@@ -1,0 +1,80 @@
+{{ $tile_image_1 := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_1_default }}
+{{ $tile_image_1_alt := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_1_alt_default }}
+{{ $tile_image_2 := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_2_default }}
+{{ $tile_image_2_alt := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_2_alt_default }}
+{{ $tile_image_3 := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_3_default }}
+{{ $tile_image_3_alt := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_3_alt_default }}
+{{ $tile_image_4 := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_4_default }}
+{{ $tile_image_4_alt := site.Params.brokeros_content_with_4_image_tiles_component_tile_image_4_alt_default }}
+
+
+<!-- Content section -->
+<div class="mt-32 overflow-hidden sm:mt-40">
+    <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
+        <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
+          <h2 class="text-4xl font-semibold tracking-tight text-(--bos-text-on-container) sm:text-5xl">
+            {{ with .headline_primary_text }}
+              {{ . }}
+            {{ else }}
+              {{ site.Params.brokeros_content_with_4_image_tiles_component_headline_text_default }}
+            {{ end }}
+          </h2>
+          <p class="mt-6 text-xl/8 text-(--bos-text-on-container-lighter)">
+            {{ with .headline_secondary_text }}
+              {{ . }}
+            {{ else }}
+              {{ site.Params.brokeros_content_with_4_image_tiles_component_headline_secondary_default }}
+            {{ end }}
+          </p>
+          <p class="mt-6 text-base/7 text-(--bos-text-on-container-lighter)">
+            {{ with .paragraph }}
+              {{ . }} 
+            {{ else }}
+              {{ site.Params.brokeros_content_with_4_image_tiles_component_paragraph_default }}
+            {{ end }}
+          </p>
+        </div>
+        <div class="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
+          <div class="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
+            {{ with .tile_image_1 }}
+              {{ $tile_image_1 = . }}
+            {{ end }}
+            {{ with .tile_image_1_alt }}
+              {{ $tile_image_1_alt = . }}
+            {{ end }}
+            <img src="{{ $tile_image_1 }}" alt="{{ $tile_image_1_alt }}" class="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover">
+          </div>
+          <div class="contents lg:col-span-2 lg:col-end-2 lg:ml-auto lg:flex lg:w-[37rem] lg:items-start lg:justify-end lg:gap-x-8">
+            <div class="order-first flex w-64 flex-none justify-end self-end lg:w-auto">
+              {{ with .tile_image_2 }}
+                {{ $tile_image_2 = . }}
+              {{ end }}
+              {{ with .tile_image_2_alt }}
+                {{ $tile_image_2_alt = . }}
+              {{ end }}
+              <img src="{{ $tile_image_2 }}" alt="{{ $tile_image_1 }}" class="aspect-[4/3] w-[24rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover">
+            </div>
+            <div class="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
+              {{ with .tile_image_3 }}
+                {{ $tile_image_3 = . }}
+              {{ end }}
+              {{ with .tile_image_3_alt }}
+                {{ $tile_image_3_alt = . }}
+              {{ end }}
+              <img src="{{ $tile_image_3 }}" alt="" class="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover">
+            </div>
+            <div class="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
+              {{ with .tile_image_4 }}
+                {{ $tile_image_4 = . }}
+              {{ end }}
+              {{ with .tile_image_4_alt }}
+                {{ $tile_image_4_alt = . }}
+              {{ end }}
+              <img src="{{ $tile_image_4 }}" alt="{{ $tile_image_4_alt }}" class="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
