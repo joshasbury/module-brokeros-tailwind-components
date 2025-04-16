@@ -18,6 +18,8 @@
           <option value="tailwind-default">Default</option>
           <option value="indigo">Indigo</option>
           <option value="lime">Lime</option>
+          <option value="nickles">Nickles</option>
+
           <option value="neutral">Neutral</option>
           <option value="orange">Orange</option>
           <option value="pink">Pink</option>
@@ -33,7 +35,7 @@
           <option value="teal">Teal</option>
           <option value="violet">Violet</option>
           <option value="yellow">Yellow</option>
-          <option value="zinc">Zinc</option>
+          <option value="zinc">Zinc</option> 
         </select>
     </label>
   </div>
@@ -49,13 +51,17 @@
       document.cookie = "bos-data-theme=" + value;
     }
 
-    //var cookieTheme = getCookie();
-    //if (cookieTheme) {
-      //document.querySelector('html').setAttribute('data-theme', cookieTheme);
-    //}
+    var cookieTheme = getCookie();
+
+    if (cookieTheme) {
+      //alert("cookieTheme: " + cookieTheme);
+      document.querySelector('html').setAttribute('data-theme', cookieTheme);
+    }
     
     function getCookie() {
-      try { document.cookie.split('bos-data-theme=').pop().split(';').shift(); }
+      try { document.cookie.split('bos-data-theme=').pop().split(';').shift(); 
+      //alert (document.cookie.split('bos-data-theme=').pop().split(';').shift() )
+    }
       catch (e) { console.log(e) }
     }
 
