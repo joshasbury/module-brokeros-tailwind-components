@@ -1,8 +1,8 @@
 {{ $cta_href := site.Params.brokeros_cta_split_component_cta_button_1_link_default}}
 {{ $cta_text := site.Params.brokeros_cta_split_component_cta_button_1_text_default}}
 
-<div class="relative bg-(--bos-color-primary-container)">
-    <div class="relative h-80 overflow-hidden bg-(--bos-color-primary-container) md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
+<div class="relative bg-(--bos-color-container) dark:bg-(--bos-color-container-dark)">
+    <div class="relative h-80 overflow-hidden bg-(--bos-color-container) dark:bg-(--bos-color-container-dark) md:absolute md:left-0 md:h-full md:w-1/3 lg:w-1/2">
       {{ with .background_image }}
         <img class="size-full object-cover" src="{{ . }}" alt="">
     {{ else }}
@@ -20,7 +20,7 @@
     </div>
     <div class="relative mx-auto max-w-7xl py-24 sm:py-32 lg:px-8 lg:py-40">
       <div class="pr-6 pl-6 md:ml-auto md:w-2/3 md:pl-16 lg:w-1/2 lg:pr-0 lg:pl-24 xl:pl-32">
-        <h2 class="text-base/7 font-semibold text-(--bos-color-on-primary-container)">
+        <h2 class="text-base/7 font-semibold text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark)">
             {{ with .announcement }}
                 {{ if .enable }}
                     {{ with .announcement_text }}
@@ -31,7 +31,7 @@
                 {{ end }}
             {{ end }}
         </h2>
-        <p class="mt-2 text-4xl font-semibold tracking-tight text-(--bos-color-on-primary-container) sm:text-5xl">
+        <p class="mt-2 text-4xl font-semibold tracking-tight text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark) sm:text-5xl">
             {{ with .headline_primary }}
                 {{ if .enable }}
                     {{ with .headline_primary_text }}
@@ -44,7 +44,7 @@
                 {{ site.Params.brokeros_cta_split_component_cta_headline_primary_text_default }}
             {{ end }}
         </p>
-        <p class="mt-6 text-base/7 text-(--bos-color-on-primary-container)">
+        <p class="mt-6 text-base/7 text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark)">
             {{ with .headline_secondary }}
                 {{ if .enable }}
                     {{ with .headline_secondary_text }}
@@ -70,8 +70,8 @@
                     {{ $cta_text = site.Params.brokeros_cta_split_component_cta_button_1_text_default}}
                 {{ end }}
             {{ end }} 
-          <a href="{{ $cta_href }}" class="inline-flex rounded-md bg-(--bos-color-on-container) px-3.5 py-2.5 text-sm font-semibold text-(--bos-color-on-primary-container) shadow-xs hover:bg-(--bos-color-on-container-variant) focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
-            {{ $cta_text }}
+          <a href="{{ $cta_href }}" class="inline-flex rounded-md bg-(--bos-color-container-dark) text-(--bos-color-on-surface-dark) hover:bg-(--bos-color-container-variant-dark) px-3.5 py-2.5 text-sm font-semibold shadow-xs focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            {{ $cta_text }}!
           </a>
         </div>
       </div>

@@ -1,0 +1,40 @@
+{{ $cta_text_1 := site.Params.brokeros_cta_simple_justified_component_cta_button_1_text_default }}
+{{ $cta_href_1 := site.Params.brokeros_cta_simple_justified_component_cta_button_1_link_default }}
+{{ $cta_text_2 := site.Params.brokeros_cta_simple_justified_component_cta_button_2_text_default }}
+{{ $cta_href_2 := site.Params.brokeros_cta_simple_justified_component_cta_button_2_link_default }}
+
+
+<div class="bg-(--bos-color-container)">
+    <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+      <h2 class="max-w-2xl text-4xl font-semibold tracking-tight text-(--bos-color-on-container) sm:text-5xl">
+        Ready to dive in? 
+        <br>
+        Start your free trial today.
+      </h2>
+      <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
+        {{ with .cta_button_1 }}
+            {{ with .link }}
+                {{ $cta_href_1 = . }}
+            {{ end }}
+            {{ with .text }}
+                {{ $cta_text_1 = . }}
+            {{ end }}
+        {{ end }} 
+        <a href="{{$cta_href_1}}" class="rounded-md bg-(--bos-color-container-dark) text-(--bos-color-on-surface-dark) hover:bg-(--bos-color-container-variant-dark) px-3.5 py-2.5 text-sm font-semibold shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          {{$cta_text_1}}
+        </a>
+        {{ with .cta_button_2 }}
+            {{ with .link }}
+                {{ $cta_href_2 = . }}
+            {{ end }}
+            {{ with .text }}
+                {{ $cta_text_2 = . }}
+            {{ end }}
+        {{ end }} 
+        <a href="{{$cta_href_2}}" class="text-sm/6 font-semibold text-(--bos-color-on-container)">
+          {{$cta_text_2}}
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </div>
+  </div>

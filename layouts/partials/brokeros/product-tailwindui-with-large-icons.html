@@ -1,7 +1,7 @@
 <div class="bos-section bg-(--bos-color-surface)">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="mx-auto max-w-2xl lg:mx-0">
-      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-(--bos-color-on-surface-primary-color) sm:text-5xl">
+      <h2 class="text-pretty text-4xl font-semibold tracking-tight text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark) sm:text-5xl">
         {{ with .headline_primary }}
           {{ if .enable }}
             {{ with .headline_primary_text }}
@@ -30,16 +30,18 @@
           {{ if .enable }}
             {{ range .product_details }}
               <div class="px-6 py-6 flex flex-col rounded-xl bg-(--bos-color-container)">
-                <dt class="text-base/7 font-semibold text-gray-900">
-                  <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-(--bos-color-on-surface-primary-color)">
+                <dt class="text-base/7 font-semibold text-(--bos-color-on-container)">
+                  <div class="mb-6 flex size-10 items-center justify-center rounded-lg bg-(--bos-color-on-container)">
                     <i class="{{ .icon }}"></i>
                   </div>
                   {{ .title }}
                 </dt>
-                <dd class="mt-1 flex flex-auto flex-col text-base/7 text-(--bos-color-on-container)">
+                <dd class="mt-1 flex flex-auto flex-col text-base/7 text-(--bos-color-on-container) dark:text-(--bos-color-on-container-dark)">
                   <p class="flex-auto">{{ .description }}</p>
                   <p class="mt-6">
-                    <a href="{{ .cta_link }}" class="text-sm/6 font-semibold text-(--bos-color-on-surface-primary-color) hover:text-(--bos-color-on-primary-container-variant)">{{ .cta_text }} <span aria-hidden="true">→</span></a>
+                    <a href="{{ .cta_link }}" class="text-sm/6 font-semibold text-(--bos-color-on-container) dark:text-(--bos-color-on-container-dark) hover:text-(--bos-color-on-container-variant)">{{ .cta_text }} 
+                      <span aria-hidden="true">→</span>
+                    </a>
                   </p>
                 </dd>
               </div>

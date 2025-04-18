@@ -1,0 +1,37 @@
+{{ $bg_image := site.Params.brokeros_page_header_simple_component_background_image_default }}
+{{ $bg_image_alt := site.Params.brokeros_page_header_simple_component_background_image_alt_default }}
+{{ $vertical_height := "h-96"}}
+
+{{ with .background_image }}
+  {{ $bg_image = . }}
+{{ end }}
+
+{{ with .background_image_alt }}
+  {{ $bg_image_alt = . }}
+{{ end }}
+
+{{ with .vertical_height }}
+  {{ . }}
+{{ end }}
+
+<div class="bg-(--bos-color-primary) bg-blend-soft-light relative min-{{ $vertical_height }} w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 h-screen w-full after:bg-(--bos-color-primary)"></div>
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <h2 class="pt-6 text-4xl font-bold tracking-tight text-white dark:text-white sm:text-6xl">
+            {{ with .headline_primary_text }}
+                {{ . }}
+            {{ else }}
+                {{ site.Store.Get "brokeros_page_header_simple_component_headline_primary_text_default" }}
+            {{ end }}
+       </h2>
+        <p class="mt-6 text-lg leading-8 text-(--bos-color-on-container-overlay) dark:text-gray-300">
+            {{ with .headline_secondary_text }}
+                {{ . }}
+            {{ else }}
+                {{ site.Store.Get "brokeros_page_header_simple_component_headline_secondary_text_default" }}
+            {{ end }}
+        </p>
+      </div>
+    </div>
+  </div>

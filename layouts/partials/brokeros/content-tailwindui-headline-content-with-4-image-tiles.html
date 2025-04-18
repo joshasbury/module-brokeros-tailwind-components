@@ -9,25 +9,25 @@
 
 
 <!-- Content section -->
-<div class="mt-32 overflow-hidden sm:mt-40">
+<div class="bos-section overflow-hidden">
     <div class="mx-auto max-w-7xl px-6 lg:flex lg:px-8">
       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 lg:mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
         <div class="lg:col-end-1 lg:w-full lg:max-w-lg lg:pb-8">
-          <h2 class="text-4xl font-semibold tracking-tight text-(--bos-text-on-container) sm:text-5xl">
+          <h2 class="text-4xl font-semibold tracking-tight text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark) sm:text-5xl">
             {{ with .headline_primary_text }}
               {{ . }}
             {{ else }}
               {{ site.Params.brokeros_content_with_4_image_tiles_component_headline_text_default }}
             {{ end }}
           </h2>
-          <p class="mt-6 text-xl/8 text-(--bos-text-on-container-lighter)">
+          <p class="mt-6 text-xl/8 text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark)">
             {{ with .headline_secondary_text }}
               {{ . }}
             {{ else }}
               {{ site.Params.brokeros_content_with_4_image_tiles_component_headline_secondary_default }}
             {{ end }}
           </p>
-          <p class="mt-6 text-base/7 text-(--bos-text-on-container-lighter)">
+          <p class="mt-6 text-base/7 text-(--bos-color-on-surface) dark:text-(--bos-color-on-surface-dark)">
             {{ with .paragraph }}
               {{ . }} 
             {{ else }}

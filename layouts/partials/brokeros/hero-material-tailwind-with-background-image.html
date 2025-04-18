@@ -1,19 +1,26 @@
 
 {{ $bg_image := site.Params.brokeros_hero_component_background_image_default }}
+{{ $vertical_height := "h-full" }}
+
 {{ with .background_image }}
   {{ $bg_image = . }}
 {{ end }}
 
+{{ with .vertical_height }}
+  {{ $vertical_height = . }}
+{{ end }}
+
 <!-- <div class="bg-(--bos-color-primary) bg-blend-soft-light pb-16 relative min-h-screen w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">-->
-<div class="bg-(--bos-color-primary) bg-blend-soft-light relative min-h-screen w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">
-  <div class="absolute inset-0 h-full w-full after:bg-(--bos-color-primary)"></div>
-    <div class="grid min-h-screen px-8">
+<div class="bg-(--bos-color-primary) bg-blend-soft-light relative min-h-{{ $vertical_height }} w-full bg-[url('{{ $bg_image }}')] bg-cover bg-center bg-no-repeat">
+  <div class="absolute inset-0 {{ $vertical_height }} w-full after:bg-(--bos-color-primary)"></div>
+    <div class="grid min-h-{{ $vertical_height }} px-8">
       <div class="container relative z-10 my-auto mx-auto grid place-items-center text-center">
           <h3 class="block antialiased tracking-normal font-sans font-semibold text-white text-lg !leading-snug lg:text-2xl">
             {{ with .headline_secondary_text}}
               {{ . }}
             {{ else }}
               {{ site.Params.brokeros_hero_component_headline_secondary_text_default  }}
+              {{ site.Store.Get "brokeros_hero_component_headline_secondary_text_default" }}
             {{ end }}
           </h3>
           <h1 class="block antialiased tracking-normal font-sans font-semibold text-white my-4 text-3xl !leading-snug lg:text-5xl">
@@ -31,15 +38,15 @@
             {{ end }}
           </p>
           <div class="mt-10 flex items-center gap-x-6">
-            <a href="#hero-bottom" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-(--bos-color-primary) hover:bg-(--bos-color-on-primary-container-variant) shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            <a href="#hero-bottom" class="rounded-md bg-(--bos-color-container) px-3.5 py-2.5 text-sm font-semibold text-(--bos-color-on-surface) hover:bg-(--bos-color-container-variant) shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               {{ with .cta_button_1_text }}
                 {{ . }}
               {{ else }}
                 {{ site.Params.brokeros_hero_component_cta_button_1_text_default }}
               {{ end }}
             </a>
-            <a href="#" class="text-sm/6 font-semibold text-white hover:text-(--bos-color-on-primary-container-variant)">
-              {{ with .cta_button_2_text }}
+            <a href="#" class="text-sm/6 font-semibold text-white hover:text-(--bos-color-container)">
+              {{ with .cta_button_2_text }}!!
                 {{ . }}
               {{ else }}
                 {{ site.Params.brokeros_hero_component_cta_button_2_text_default }}
